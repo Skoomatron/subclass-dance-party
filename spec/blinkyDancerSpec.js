@@ -32,3 +32,5 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+// add 1-2 test for each new dance function

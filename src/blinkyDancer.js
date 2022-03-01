@@ -1,29 +1,21 @@
-var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  MakeDancer.call(this);
-
-
-  var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
-
-  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
-
-  var oldStep = blinkyDancer.step;
-
-  blinkyDancer.step = function() { // MakeBlinkyDancer.prototype.step = function() {};
-
-    // call the old version of step at the beginning of any call to this new version of step
-    oldStep();
-    // toggle() is a jQuery method to show/hide the <span> tag.
-    // See http://api.jquery.com/category/effects/ for this and
-    // other effects you can use on a jQuery-wrapped html tag.
-
-    blinkyDancer.$node.toggle(); // hides visual artifact of making a span?
+var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  makeDancer.call(this);
+  this.oldStep = this.step;
+  this.step = function() {
+    this.oldStep();
+    this.$node.toggle();
   };
-
-  return blinkyDancer;
 };
 
-// constructor and prototype need to be set
+makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
-MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
-MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
+// makeBlinkyDancer.prototype.step = function() {
+//   this.$node.toggle(this.timeBetweenSteps); //toggle is a jQuery method, toggle accepts a duration and/or an end point, with no parameters, toggles visibility
+//   // makeDancer.prototype.step.call(this);
+// };
+
+//makeBlinkyDancer.$node = $('<span class="dancer"></span>');
+
+
+// var blinky1 = new makeBlinkyDancer();

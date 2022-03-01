@@ -27,34 +27,38 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
-  describe('bouncyDancer', function () {
-    var bouncyDancer;
-    beforeEach(function() {
-      clock = sinon.useFakeTimers();
-      bouncyDancer = new makeBouncyDancer(10, 20, 1);
-      console.log(bouncyDancer);
-    });
-
-    it('should have a bouncy class on bouncy dancers', function() {
-      expect(bouncyDancer.$node.getElementById('bouncy')).to.be.true;
-    });
-  });
-
-
-  describe('blueDancer', function() {
-    var blueDancer;
-
-    beforeEach(function() {
-      clock = sinon.useFakeTimers();
-      blueDancer = new makeBlueDancer(10, 20, 1);
-    });
-
-    it('should have a jQuery $node object', function() {
-      expect(blueDancer.$node).to.be.an.instanceof(jQuery);
-
-    });
-  });
-
-
 });
+
+describe('bouncyDancer', function () {
+  var bouncyDancer, clock;
+  var timeBetweenSteps = 1;
+
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    bouncyDancer = new makeBouncyDancer(10, 20, timeBetweenSteps);
+  });
+  it('length should be 1', function() {
+    expect(bouncyDancer.$node.length).to.be.equal(1);
+  });
+  it('should have a jQuery $node object', function() {
+    expect(bouncyDancer.$node).to.be.an.instanceof(jQuery);
+  });
+});
+
+describe('blueDancer', function() {
+  var blueDancer, dancer;
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    blueDancer = new makeBlueDancer(10, 20, 1);
+    dancer = new makeDancer(21, 10, 4);
+  });
+  it('should not be the same as dancer', function() {
+    expect(blueDancer).not.equal(makeDancer);
+  });
+  it('should have a jQuery $node object', function() {
+    expect(blueDancer.$node).to.be.an.instanceof(jQuery);
+  });
+});
+
+
 

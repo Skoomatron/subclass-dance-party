@@ -6,8 +6,6 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
     this.oldStep();
     this.$node.toggle();
   };
-  this.clicker(event);
-  this.setPosition(top, left);
 
 };
 

@@ -6,7 +6,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps / 2);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -17,16 +17,16 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.clicker = function(event) {
-  $('.lineup').click(function (event) {
-    console.log('popped twice');
-    // find all dancers
-    // for each dancer
-    // set style="left:0px"
-  });
+makeDancer.prototype.lineup = function(event) {
+  var styleSettings = {
+    left: 0
+  };
+  this.$node.css(styleSettings);
+
 };
 
-console.log(window);
+
+//console.log(window);
 
 
 

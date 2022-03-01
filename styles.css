@@ -3,19 +3,20 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:rgb(68, 68, 68);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton {
   padding:5px 12px;
-  float:right;
+  float: right;
+
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: rgb(105, 38, 38);
 }
 .title{
   background-color: #777;
@@ -25,3 +26,44 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.bouncy{
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+}
+.blue{
+  border:10px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
+
+
+/* ============= Not Tested ============== */
+
+/* .bouncy {
+  width: 100px;
+  height: 100px;
+  background: black;
+
+  position:absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: bounce 3s, move 3s; // separated by a comma
+
+}
+
+@keyframes bounce{
+  100% {
+      left:80%;
+  }
+}
+
+@keyframes move {
+  50% {
+      bottom: 20%;
+  }
+  100% {
+      bottom: 0;
+  }
+} */

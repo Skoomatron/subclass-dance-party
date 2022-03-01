@@ -3,7 +3,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
   this.step();
-  this.setPosition(top, left);
+  this.setPosition(Math.random() * window.innerHeight, Math.random() * window.innerWidth); // Math.random() here?
 };
 
 makeDancer.prototype.step = function() {

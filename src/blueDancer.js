@@ -1,6 +1,8 @@
 var makeBlueDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this);
-  this.$node = $('<span class="blue"></span>');
+  this.$node.addClass('blue');
+  this.clicker(event);
+
   // this.oldStep = this.step;
   // this.step = function() {
   //   this.oldStep();

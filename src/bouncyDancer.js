@@ -1,8 +1,8 @@
-var makeBouncyDancer = function() {
+var makeBouncyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this);
-  this.$node = $('<span class="bouncy"></span>');
-  // call appropriate methods per css animation?
-// bouncing would need initial position and maybe something else?
+  this.$node.addClass('bouncy');
+  this.
+  this.clicker(event);
 };
 
 makeBouncyDancer.prototype = Object.create(makeDancer.prototype);

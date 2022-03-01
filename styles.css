@@ -3,67 +3,80 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:rgb(68, 68, 68);
+  background-color:rgb(27, 54, 28);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+.title{
+  background-color: #777;
+}
 .title, .addDancerButton {
   padding:5px 12px;
   float: right;
+  border: 1px solid;
 
+}
+.lineup {
+  padding:5px 12px;
+  float: right;
+  border: 1px solid;
+  background-color: orange;
 }
 .topbar{
   height:32px;
   background-color: rgb(105, 38, 38);
+  border: 2px solid white;
 }
-.title{
-  background-color: #777;
+.topbar a:hover {
+	background-color: #FFF;
+	color: rgb(105, 38, 38);
+  transition-property: color, background-color;
+	transition-duration: 0.5s;
 }
 .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
-.bouncy{
-  border:10px solid green;
-  border-radius:10px;
-  position:absolute;
-}
 .blue{
-  border:10px solid blue;
-  border-radius:10px;
+  border:20px solid blue;
+  border-radius: 10px;
   position:absolute;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
-
-
-/* ============= Not Tested ============== */
-
-/* .bouncy {
-  width: 100px;
-  height: 100px;
-  background: black;
-
-  position:absolute;
-  bottom: 0;
-  left: 0;
-
-  animation: bounce 3s, move 3s; // separated by a comma
-
+.bouncy {
+  border:20px solid black;
+  border-radius: 10px;
+  position:relative;
+  animation: spin;
+  animation: bounce 0.5s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce{
-  100% {
-      left:80%;
+    100% {
+        left:80%;
+    }
+}
+@keyframes move {
+    50% {
+        bottom: 20%;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
   }
 }
-
-@keyframes move {
-  50% {
-      bottom: 20%;
-  }
-  100% {
-      bottom: 0;
-  }
-} */

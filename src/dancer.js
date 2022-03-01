@@ -1,5 +1,4 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
-
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
   this.step();
@@ -17,4 +16,20 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+makeDancer.prototype.clicker = function(event) {
+  $('.lineup').click(function (event) {
+    console.log('popped twice');
+    // find all dancers
+    // for each dancer
+      // set style="left:0px"
+  });
+};
+
+console.log(window);
+
+
+
+
+
 

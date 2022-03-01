@@ -6,7 +6,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps / 2);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -22,7 +22,7 @@ makeDancer.prototype.clicker = function(event) {
     console.log('popped twice');
     // find all dancers
     // for each dancer
-      // set style="left:0px"
+    // set style="left:0px"
   });
 };
 

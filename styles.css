@@ -44,7 +44,7 @@ body, a:link, a:visited, a:active{
   height: 25%;
   content: url("Assets/bird.png");
   position:absolute;
-  animation-name: spin;
+  animation: spin 0.5s;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -53,8 +53,7 @@ body, a:link, a:visited, a:active{
   height: 10%;
   content: url("Assets/ball.png");
   position:relative;
-  animation: spin;
-  animation: bounce 0.5s;
+  animation: bounce 1s;
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
 }
